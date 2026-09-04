@@ -51,7 +51,7 @@ while true; do
         new_array=()
         for value in "${workdirs[@]}"
         do
-            [[ $value != $workdir ]] && new_array+=($value)
+            [[ $value != $workdir ]] && new_array+=("$value")
         done
         workdirs=("${new_array[@]}")
         unset new_array
