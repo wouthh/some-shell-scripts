@@ -4,14 +4,14 @@ Updates your forked repositories in for example GitHub.
 
 # Usage
 
-Change the directory to where you cloned your forked repositories, in the script it's this line :
-`~/Documents/Projects/forks`
+The script scans `$HOME/forks` by default. Set `FORKS_ROOT` to the directory
+containing your local fork checkouts.
 
 Then set the correct origin branch to fetch for each cloned repository in the forks dir :
-`git remote set-url origin https://github.com/<original maintainer>/<repo name>`
+`git remote set-url origin https://github.com/example-owner/upstream-repository.git`
 
 And reset where to push to :
-`git remote set-url --push origin https://github.com/<your username>/<repo name>`
+`git remote set-url --push origin https://github.com/example-owner/fork-repository.git`
 
 Check if everything is okay :
 `git remote -v`
@@ -19,9 +19,8 @@ Check if everything is okay :
 In my case I got for example
 ```
 $ git remote -v
-origin	https://github.com/VSCodium/vscodium (fetch)
-origin	https://github.com/woutheijnen/vscodium (push)
+origin	https://github.com/example-owner/upstream-repository.git (fetch)
+origin	https://github.com/example-owner/fork-repository.git (push)
 ```
 
 Now you can use this script (or launch it via cron / anacron like I do)
-

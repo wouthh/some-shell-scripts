@@ -1,7 +1,9 @@
 #!/bin/bash
+NVIDIA_PATCH_REPO="${NVIDIA_PATCH_REPO:-$HOME/forks/nvidia-patch}"
+
 echo "========================================"
 echo "[$(date)] Start Nvidia patcher"
-/mnt/532b7e3f-a0ed-4457-aa31-a593d128fb07/forks/nvidia-patch/patch.sh
+"$NVIDIA_PATCH_REPO/patch.sh"
 echo "[$(date)] Start Nvidia FBC patcher"
-/mnt/532b7e3f-a0ed-4457-aa31-a593d128fb07/forks/nvidia-patch/patch-fbc.sh
+"$NVIDIA_PATCH_REPO/patch-fbc.sh"
 echo "[$(date)] Done"
